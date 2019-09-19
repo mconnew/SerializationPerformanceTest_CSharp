@@ -20,7 +20,8 @@ namespace SerializationPerformanceTest
             var testers = new SerializationTester[]
                 {
                     //List of beers
-                    new DataContractSerializationTester<List<Beer>>(beersList), 
+                    new DataContractSerializationTester<List<Beer>>(beersList),
+                    new DataContractBinarySerializationTester<List<Beer>>(beersList),
                     new XmlSerializationTester<List<Beer>>(beersList),
                     new BinarySerializationTester<List<Beer>>(beersList),
                     new JsonNewtonsoftSerializationTester<List<Beer>>(beersList),
@@ -30,6 +31,7 @@ namespace SerializationPerformanceTest
                     
                     //Single beer
                     new DataContractSerializationTester<Beer>(beer),
+                    new DataContractBinarySerializationTester<Beer>(beer),
                     new XmlSerializationTester<Beer>(beer),
                     new BinarySerializationTester<Beer>(beer),
                     new JsonNewtonsoftSerializationTester<Beer>(beer),
